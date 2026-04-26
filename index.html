@@ -406,22 +406,6 @@ function openCurtain(){
   setTimeout(()=>{ scr.classList.add('hide'); startMusic(); }, 1600);
 }
 
-// ── MUSIC — Google Drive direct ──
-const audioEl = new Audio('https://drive.google.com/uc?export=download&id=16LH4tE8R8Swkj73lqPD2db9ALSptGBhk');
-audioEl.loop = true;
-audioEl.volume = 0.45;
-const mBtn = document.getElementById('musicBtn');
-let musicOn = false;
-function startMusic(){
-  audioEl.play()
-    .then(()=>{ musicOn=true; mBtn.textContent='♫'; })
-    .catch(e=>console.log('Audio blocked:',e));
-}
-function toggleMusic(){
-  if(audioEl.paused){ audioEl.play(); musicOn=true; mBtn.textContent='♫'; }
-  else{ audioEl.pause(); musicOn=false; mBtn.textContent='♪'; }
-}
-
 // ── MUSIC ──
 // Upload your MP3 to GitHub alongside index.html and use: new Audio('./sita-kalyanam.mp3')
 // OR use Dropbox: change ?dl=0 to ?raw=1 at the end of the share link
